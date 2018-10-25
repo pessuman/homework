@@ -4,7 +4,7 @@ USE sakila;
 SELECT first_name, last_name FROM actor;
 
 -- 1b. Display the first and last name of each actor in a single column in upper case letters. Name the column Actor Name.
-SELECT CONCAT_WS(', ', first_name, last_name) as 'Actor Name'
+SELECT CONCAT_WS('  ',first_name,last_name) as 'Actor Name'
     FROM actor;
     
 -- 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, "Joe." What is one query would you use to obtain this information?
@@ -114,7 +114,8 @@ WHERE title = 'Hunchback Impossible';
 SELECT last_name, first_name, sum(amount) AS 'Total Paid'
 FROM customer 
 INNER JOIN payment USING (customer_id)
-GROUP BY last_name ASC;
+GROUP BY last_name, first_name 
+ORDER BY last_name ASC;
 
 
 /* 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence, 
@@ -133,7 +134,7 @@ WHERE language_id IN
   );
    
 -- 7b. Use subqueries to display all actors who appear in the film Alone Trip.
-SELECT CONCAT_WS(', ', first_name, last_name) as 'Actors in Alone Trip'
+SELECT CONCAT_WS('  ', first_name, last_name) as 'Actors in Alone Trip'
 FROM actor   
 WHERE actor_id IN
 (
@@ -155,7 +156,8 @@ SELECT first_name, last_name, email
 	FROM customer
     INNER JOIN address USING (address_id)
 	INNER JOIN city USING (city_id)
-    INNER JOIN country USING (country_id);
+    INNER JOIN country USING (country_id)
+    WHERE country = 'Canada';
 
 /* 7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. 
  Identify all movies categorized as family films.*/
