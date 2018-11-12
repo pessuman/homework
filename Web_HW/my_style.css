@@ -1,0 +1,48 @@
+.navbar {
+  padding: 1px;
+  background-color: #fff;
+
+}
+.band {
+    font-weight: bold;
+    background-color: lightblue;
+    color: white;
+    font-size: 60px;
+
+}
+
+
+h2{
+  font-weight: bold;
+  color: teal;
+  padding: 5px;
+}
+
+h3{
+  font-weight: bold;
+  color: teal;
+  text-align: center;
+}
+.navbar li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.navbar li a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+body{
+  background: #f1f1f1;
+}
+
+/* footer {
+      background-color: #555;
+      color: white;
+      text-align: center;
+    } */
+  
